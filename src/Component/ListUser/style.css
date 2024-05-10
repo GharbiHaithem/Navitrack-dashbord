@@ -1,0 +1,88 @@
+.table-list-user{
+    width: 100%;
+}
+.container{
+   width: 100%;
+   background-image:linear-gradient(to top , transparent,rgba(134, 134, 246, 0.096)) ;
+   position: relative  
+}
+.qqq{
+    width: 148% !important;
+}
+button {
+    background-image: linear-gradient(to right ,rgba(84, 239, 17, 0.811),rgba(230, 234, 21, 0.766)) !important;
+    font-weight: 600;
+    color: white;  
+}
+@media screen  and (max-width:375px){
+    .ant-table-wrapper .ant-table {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: rgba(0, 0, 0, 0.88);
+        font-size: 10px;
+        line-height: 1.5714285714285714;
+        list-style: none;
+        font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+        background: #ffffff;
+        border-radius: 8px 8px 0 0;
+    }
+    .container{
+        overflow-y: scroll;
+        background-image:linear-gradient(to top , transparent,rgba(134, 134, 246, 0.096)) ;
+            max-width: 100%;
+       position: relative  
+           
+    
+}
+
+.not-decale{
+
+        transform: translateX(0);
+        border: 1px solid red;
+        width: 100%;
+        overflow: hidden;
+        height:100vh
+    
+}
+}
+.ant-table-wrapper .ant-table {
+ 
+   
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: rgba(0, 0, 0, 0.88);
+        font-size: 10px;
+        line-height: 1.5714285714285714;
+        list-style: none;
+        font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+        background: #ffffff;
+        border-radius: 8px 8px 0 0;
+    
+  
+}
+@media screen and (max-width:414px){
+    .menuwrapper {
+        position: absolute;
+        width: 100%;
+        background-color: rgb(245, 236, 236);
+        box-shadow: 0 0 3px #dfdada;
+        height: 100vh;
+        left: 0;
+        z-index: 10;
+        top: 0;
+        padding-top: 80px;
+        transition: all 0.5s ease-in;
+}
+.container {
+    width: 100%!important;
+    height: max-content;
+    overflow-y: scroll;
+}
+.not-decale {
+    transform: translateX(0);
+    /* width: 100%; */
+    overflow: hidden;
+}
+}

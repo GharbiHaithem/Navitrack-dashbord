@@ -1,0 +1,76 @@
+.container{
+    width: 100% !important;
+    height: max-content;
+  
+}
+form{
+margin: 20px 10px;
+height: max-content;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+.close-content .not-decale {
+    width: 60%;
+    margin:0 auto;
+  }
+.open-content .content-decale{
+    width: 700px;
+}
+.open-content .content-decale .container{
+  
+}
+@media screen and (max-width:375px){
+    .container{
+        max-width: 100%;
+       
+    }
+    .login-box{
+        width: 100%;
+    }
+}
+@media screen and (max-width:414px){
+    .not-decale {
+        transform: translateX(0);
+        /* width: 100%; */
+     
+        overflow: hidden;
+    }
+    .container {
+        width: 100%!important;
+        height: max-content;
+    }
+}
+.yyyaaa{
+    position: relative;
+    transition: .5s;
+    overflow: hidden;
+    z-index: 1;
+    background-color: transparent !important;
+    padding: 15px;
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    font-size: 20px !important ;
+}
+.yyyaaa::after{
+    content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      z-index: -1;
+      transition: .5s ;
+      background:linear-gradient(45deg ,#0766AD , #29ADB2);
+    
+      font-weight: 600;
+}
+.yyyaaa:hover::after{
+    width: 100% !important;
+   
+}
+.yyyaaa:hover{
+    color: white !important;
+    border: 2px solid white !important;
+}

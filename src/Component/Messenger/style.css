@@ -1,0 +1,48 @@
+.messenger-wrapper{
+    height: 60vh;
+    overflow-y:scroll ;
+    padding: 50px;
+}
+.submit-message{
+    width: 100%;
+ 
+    margin-bottom: 40px;
+   
+}
+.submit-message textarea{
+    height: 60px !important;
+    width: 80%;
+}
+.submit-message button{
+    width: 20%;
+    height: 60px;
+    transform: translateY(-10px);
+    font-weight: 900;
+    font-size: 20px;
+    background-image: linear-gradient(to left ,rgba(114, 118, 235, 0.902),rgba(70, 57, 248, 0.845));
+
+}
+.text-gras{
+  margin: 100px auto;
+  display: block;
+    font-size: 60px;
+    color: gray;
+    font-weight: 900;
+    opacity:0.1
+}
+/* Style de la scrollbar - Compatible avec WebKit (Chrome, Safari) */
+.messenger-wrapper::-webkit-scrollbar {
+    width: 10px; 
+   /* Largeur de la scrollbar */
+  }
+  
+  .messenger-wrapper::-webkit-scrollbar-thumb {
+    background-color: #3ca5efd9; /* Couleur de la poignée de la scrollbar */
+    border-radius: 5px; /* Bordure arrondie de la poignée */
+  }
+  
+  .messenger-wrapper::-webkit-scrollbar-track {
+    background-color: #b9b4b4; /* Couleur de fond de la piste de la scrollbar */
+    border-radius: 5px; /* Bordure arrondie de la piste */
+  }
+  

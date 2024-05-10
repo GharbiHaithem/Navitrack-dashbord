@@ -1,0 +1,26 @@
+.menuwrapper{
+
+}
+.close-content{
+   
+    width:'100%'
+}
+.open-content{
+
+}
+.menuwrapper{
+    background-image:linear-gradient(to top , transparent,rgba(134, 134, 246, 0.096)) 
+}
+@media screen and (max-width:400px) {
+    .open-content{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+ .open-content   .menuwrapper{
+        width: 100%;
+    }
+}
+.styleIcon{
+    color:rgb(61, 58, 58)
+   
+}

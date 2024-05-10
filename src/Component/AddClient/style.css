@@ -1,0 +1,12 @@
+.xx{
+    background-image: linear-gradient(to left , rgba(53, 53, 242, 0.872) , rgba(242, 104, 104, 0.889));
+}
+.login-box {
+    text-align: center;
+    padding: 20px;
+  
+    width: 100% !important;
+  }
+  .not-decale {
+    transform: translateX(-150px);
+}

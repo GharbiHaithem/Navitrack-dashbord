@@ -1,0 +1,108 @@
+.messages-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   margin-top: 10px;
+}
+.messages-wrapper .top-message{
+    max-width: max-content !important;
+    min-width: 400px;
+    padding: 10px !important;
+    background-image:linear-gradient(to left,#2271e7e9 , #063376) ;
+    color: white;
+    height: max-content !important;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.messages-wrapper .top-message.own{
+    max-width: max-content !important;
+    min-width: 400px;
+    padding: 10px !important;
+    background-image:linear-gradient(to left,#e2e2e2e9 , #9c9d9e) ;
+    color: black;
+    height: max-content !important;
+    border-radius: 10px;
+    display: flex;
+  
+    gap: 20px;
+ 
+ 
+ 
+}
+.top-message.own{
+    align-self: flex-end;
+}
+.messages-wrapper .top-message.own p{
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 300;
+    transform: translateY(10px);
+}
+.messages-wrapper .top-message.own img{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.messages-wrapper .top-message p{
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 300;
+    transform: translateY(10px);
+}
+.messages-wrapper .top-message img{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 4px solid white;
+}
+.body-message{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.chat-sender {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    height: 3.5rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    align-self: end;
+}
+.chat-sender>input{
+    height: 70%;
+    background-color: rgb(236, 236, 236);
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    flex  :1 ;
+    font-size: 14px;
+    padding: 0px 15px 0px 15px;
+}
+.chat-sender>div:nth-of-type(1)
+{
+    background: rgb(233, 233, 233);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer
+}
+.chat-sender>div{
+    height: 70%;
+    padding: 0px 15px 0px 15px;
+}
+.chatbox-empty-message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

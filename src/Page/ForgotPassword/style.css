@@ -1,0 +1,127 @@
+
+.buttonsubmit{
+    background-image: linear-gradient(to right ,rgba(239, 27, 27, 0.769),rgba(12, 12, 233, 0.706));
+    font-weight: 200;
+    color: white;
+    letter-spacing: 1px;
+}
+.buttoncancel{
+    background-image: linear-gradient(to right ,rgb(252, 3, 3),rgba(237, 46, 4, 0.458));
+    font-weight: 200;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 10px;
+}
+.login-box {
+    text-align: center;
+    padding:20px 20px;
+   
+}
+
+h5 {
+    color: #333;
+    text-transform: capitalize;
+    font-weight: 900;
+}
+
+form {
+    margin-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.input-container {
+    text-align: left;
+    margin: 0;
+   
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #777;
+}
+
+/* Styles pour les input avec effet de neumorphisme */
+
+
+/* Styles pour les labels des input */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #777;
+}
+
+/* Styles pour le bouton */
+.gap-10{
+    gap:20px;
+}
+.forgot-cart{
+    width: 400px;
+    box-shadow: 0 0 10px rgb(170, 163, 163);
+    padding: 20px 10px;
+    margin: 50px auto;
+    border-radius: 15px;
+}
+input{
+    border-radius: 7px;
+    margin: auto;
+}
+.button{
+   
+    width: 30%;
+    margin: auto;
+    padding: 3px;
+
+}
+.forgot-cart h6{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+}
+p.forgoot-desc{
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+   text-align: center;
+}
+/* .x{
+background-color: rgba(236, 237, 241, 0.608) !important;
+    color: rgb(0, 0, 0);
+    border: none !important;
+    box-shadow: 0 0 10px  rgb(43, 44, 44);
+    height: fit-content  !important;
+} */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Bordure gauche transparente */
+    border-right: 10px solid transparent; /* Bordure droite transparente */
+    border-bottom: 15px solid #dc3545; /* Bordure inférieure colorée */
+    top:-10px;
+    left:10px
+}
+.trianglesucces{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Bordure gauche transparente */
+    border-right: 10px solid transparent; /* Bordure droite transparente */
+    border-bottom: 15px solid #198754 !important; /* Bordure inférieure colorée */
+    top:-10px;
+    left:10px 
+}
+@media screen and (max-width:400px){
+    .forgot-cart{
+        max-width: 100%;
+    }
+    .forgot-password-wrapper {
+      
+    width: 80%;
+    display: block;
+    margin: 50px auto;
+    }
+    form{
+        width: 95%;
+    }
+}

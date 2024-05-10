@@ -1,0 +1,21 @@
+.avatar-wrapper{
+    margin-right: 120px;
+  
+    border-radius: 50%;
+    box-shadow: 0 0 1px  rgb(107, 105, 105);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    cursor: pointer;
+}
+.dropdown-toggle::after {
+    display: none;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}

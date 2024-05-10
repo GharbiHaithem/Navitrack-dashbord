@@ -1,0 +1,82 @@
+input[type="text"] {
+    width: 100%; /* Largeur du champ de saisie */
+    padding: 10px; /* Espacement à l'intérieur du champ de saisie */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de police */
+    color: #333;
+    cursor:pointer /* Couleur du texte */
+  }
+  
+  /* Style au survol du curseur */
+  input[type="text"]:hover {
+    border-color: #666; /* Changement de couleur de bordure au survol */
+  }
+  
+  /* Style au focus (lorsque le champ de saisie est sélectionné) */
+  input[type="text"]:focus {
+    outline: none; /* Supprime la bordure de sélection par défaut */
+    border-color: #007bff; /* Couleur de la bordure au focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Ombre au focus */
+  }
+  .styleButton{
+    background-image: linear-gradient(to right ,rgba(149, 148, 241, 0.491),rgba(43, 43, 226, 0.625)) !important;
+    color: rgb(251, 251, 251) !important;
+  
+}
+
+.cancel{
+  background-image: linear-gradient(to right ,rgba(234, 39, 39, 0.491),rgba(202, 202, 235, 0.639)) !important;
+    color: white !important;
+}
+
+  @media screen and (max-width:400px){
+    .login-box{
+      width: 100%;
+    }
+
+      .container1 {
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        box-shadow: 5px 5px 10px #b8b8b8, -5px -5px 10px #ffffff;
+        padding: 20px;
+        max-width: 339px;
+        margin: 20px 10px;
+    }
+    .styleButton{
+      background-image: linear-gradient(to right ,rgba(236, 126, 126, 0.491),rgba(88, 88, 235, 0.639)) !important;
+      color: white !important;
+    
+  }
+  .cancel{
+    background-image: linear-gradient(to right ,rgba(234, 39, 39, 0.491),rgba(202, 202, 235, 0.639)) !important;
+      color: white !important;
+  }
+    }
+
+  
+  @media screen and (max-width:375px){
+    .login-box{
+      width: 100%;
+    }
+ 
+      .container1 {
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        box-shadow: 5px 5px 10px #b8b8b8, -5px -5px 10px #ffffff;
+        padding: 20px;
+        max-width: 339px;
+        margin: 20px 10px;
+    }
+    .styleButton{
+      background-image: linear-gradient(to right ,rgba(236, 126, 126, 0.491),rgba(88, 88, 235, 0.639)) !important;
+      color: white !important;
+    
+  }
+  .cancel{
+    background-image: linear-gradient(to right ,rgba(234, 39, 39, 0.491),rgba(202, 202, 235, 0.639)) !important;
+      color: white !important;
+  }
+    
+
+  }

@@ -1,0 +1,22 @@
+.container{
+    width: 150% !important;
+  
+}
+
+.open-content .content-decale .qqq{
+width:178% !important;
+}
+.close-content .not-decale .qqq{
+    width: 100%  !important;
+}
+.open-content .content-decale{
+    min-width: max-content !important;
+}
+@media screen and (max-width :375px){
+    .close-content {
+        display: grid;
+        grid-template-columns: 100%;
+        width: 100%;
+        overflow-y: scroll;
+    }
+}

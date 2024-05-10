@@ -1,0 +1,40 @@
+.gap-10{
+    gap:10px
+}
+.reset-card{
+   
+    width: 500px;
+    margin: 20px auto;
+    box-shadow:  0 0 10px #bbb8b8;
+    padding: 10px 20px;
+border-radius: 5px;
+}
+.xy{
+    margin: 0 auto;
+}
+.reset-card h5{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+  
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Bordure gauche transparente */
+    border-right: 10px solid transparent; /* Bordure droite transparente */
+    border-bottom: 15px solid #dc3545; /* Bordure inférieure colorée */
+    top:-10px;
+    left:10px
+}
+.trianglesuccess{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Bordure gauche transparente */
+    border-right: 10px solid transparent; /* Bordure droite transparente */
+    border-bottom: 15px solid #198754 !important; /* Bordure inférieure colorée */
+    top:-10px;
+    left:10px 
+}

@@ -1,0 +1,17 @@
+.x{
+    border: 1px solid red;
+    height: 200px !important;
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width:375px){
+    .x{
+        display: block;
+    }
+    .x1{
+        width: 100%;
+    }
+    .x2{
+        width: 100%;
+    }
+}
