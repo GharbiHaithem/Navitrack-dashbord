@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import TextAnnimation from '../TextAnnimatioon'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-import CheckboxGroup from 'react-checkbox-group';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { categoriesfn, updateCat } from '../../features/categriesSlice';
 import {  appareilget, createappareil } from '../../features/appareilSlice';
