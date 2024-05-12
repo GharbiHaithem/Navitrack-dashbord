@@ -60,7 +60,7 @@ const Login = () => {
      validationSchema:signupSchema,
       onSubmit:(values)=>{
      
-        alert(JSON.stringify(values,null,2))
+      
      dispatch(loginUser({email:values.email,password:values.password}))
      formik.resetForm();
      setMsg(message)

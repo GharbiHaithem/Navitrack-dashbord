@@ -58,32 +58,17 @@ const handleDelete = (id)=>{
           </form> */}
 
        
-          <div  className="left-header  p-0"  >
-       {openMenu ? (<MdOutlineArrowBackIos style={{border:"1px solid red"}} className='font-bold text-blue-800 text-2xl cursor-pointer'  onClick={()=>{
-        alert("close")
+          <div  className="left-header w-[50px] z-50  p-1"  >
+       {openMenu ? (<MdOutlineArrowBackIos style={{}} className='font-bold text-blue-800 text-2xl cursor-pointer'  onClick={()=>{
+      
         setOpenMenu(!openMenu)}}/>) : (
-         <CiMenuFries  style={{border:"1px solid green"}} className='font-bold text-blue-800 text-2xl cursor-pointer'  onClick={()=>setOpenMenu(!openMenu)} />
+         <CiMenuFries  style={{}} className='font-bold text-blue-800 text-2xl cursor-pointer'  onClick={()=>setOpenMenu(!openMenu)} />
        ) }  
            
           </div>
-          <div className="nav-right  w-[500px]  pull-right right-header p-0 ms-auto"  style={{transform:"translateY(-20px)"}}>
+          <div className="nav-right  w-[500px]  pull-right right-header p-3 ms-auto"  style={{transform: "translateY(-45px)"}}>
             <ul className="nav-menus">
-              <li className="language-nav ">
-                <div className="translate_wrapper  hidden md:block">
-                  <div className="current_lang">
-                    <div className="lang"><i className="flag-icon flag-icon-us"></i><span className="lang-txt">EN                               </span></div>
-                  </div>
-                  <div className="more_lang">
-                    <div className="lang selected" data-value="en"><i className="flag-icon flag-icon-us"></i><span className="lang-txt">English<span> (US)</span></span></div>
-                    <div className="lang" data-value="de"><i className="flag-icon flag-icon-de"></i><span className="lang-txt">Deutsch</span></div>
-                    <div className="lang" data-value="es"><i className="flag-icon flag-icon-es"></i><span className="lang-txt">Español</span></div>
-                    <div className="lang" data-value="fr"><i className="flag-icon flag-icon-fr"></i><span className="lang-txt">Français</span></div>
-                    <div className="lang" data-value="pt"><i className="flag-icon flag-icon-pt"></i><span className="lang-txt">Português<span> (BR)</span></span></div>
-                    <div className="lang" data-value="cn"><i className="flag-icon flag-icon-cn"></i><span className="lang-txt">简体中文</span></div>
-                    <div className="lang" data-value="ae"><i className="flag-icon flag-icon-ae"></i><span className="lang-txt">لعربية <span> (ae)</span></span></div>
-                  </div>
-                </div>
-              </li>
+             
               <li>                         <span className="header-search">
                   <svg>
                     <use href="../../assets/svg/icon-sprite.svg#search"></use>
