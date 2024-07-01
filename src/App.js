@@ -34,6 +34,9 @@ import axios from 'axios'
 import { allusers } from './features/authSlice';
 import { companies } from './features/companieSlice';
 import { base_url } from './utils/base_url';
+import AddArticle from './Component/AddArticle';
+import ListArticles from './Component/ListArticles';
+import ShowModal from './Component/ShowModal';
 function App() {
   const dispatch = useDispatch()
 
@@ -323,6 +326,8 @@ console.log(firstFact)
   generateAndUploadPdfForAllFactures();
 }, [factures,firstFact]);
 console.log(firstFact)
+const [open, setOpen] = useState(false);
+const[productId,setProductId]=useState()
   return (
     <>
     <BrowserRouter>
@@ -342,12 +347,15 @@ console.log(firstFact)
           <Route path="addappareil" element={<AddAppareil/>} />
           <Route path="addclient" element={<AddClient/>} />
           <Route path="addvehicule" element={<AddVehicule/>} />
+          <Route path="addArticle" element={<AddArticle/>} />
           <Route path={'listusers'} element={<PrivateRoute><ListUser/></PrivateRoute>} />
+          <Route path={'listArticle'} element={<PrivateRoute><ListArticles setProductId={setProductId}  open={open} setOpen={setOpen}/></PrivateRoute>} />
           <Route path={'updateUser/:id'} element={<PrivateRoute><AddUser/></PrivateRoute>} />
           <Route path={'listcar'} element={<PrivateRoute><ListCar/></PrivateRoute>} />
           <Route path={"listappareil"} element={<PrivateRoute><ListAppareil/></PrivateRoute>} />
           <Route path='listcompanie' element={<PrivateRoute><ListCompany  openMenu={openMenu} setOpenMenu={setOpenMenu} showModal={showModal} setShowModal={setShowModal} /></PrivateRoute>} />
           <Route path={'updatecompanie/:id'} element={<PrivateRoute><AddClient/></PrivateRoute>} />
+          <Route  path={'updatearticle/:id'} element={<PrivateRoute><AddArticle/></PrivateRoute>} />
           <Route  path={'updatecar/:id'} element={<PrivateRoute><AddVehicule/></PrivateRoute>} />
           <Route path={"editappareil/:id"} element={<PrivateRoute><AddAppareil/></PrivateRoute>} />
           <Route  path={'devis/:id'} element={<PrivateRoute><Devis /></PrivateRoute>} />
@@ -372,6 +380,7 @@ style={{width:'700px'}}
 {(showModal.name==="listVehicule" && showModal.status===true) && <ModalCompanie setShowModal={setShowModal} showModal={showModal}/>}
 {(showModal.name==="listFacture" && showModal.status===true) && <ModalCompanie setShowModal={setShowModal} showModal={showModal}/>}
  {showAlert && <AlertModal setShowAlert={setShowAlert} qtyId={qtyId}/>}
+ {open && <ShowModal  productId={productId} open={open} setOpen={setOpen} />}    
     </BrowserRouter>
   </>
   );

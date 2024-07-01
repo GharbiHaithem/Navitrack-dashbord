@@ -117,6 +117,27 @@ const MenuBar = ({setMenuStates,menuStates}) => {
   <span><i class="fa-solid fa-square-plus"></i></span>
  </div>
   </div>
+  <div className={`p-2   flex flex-col ${menuStates.user ? "bg-gray-200 text-black" :"transparent"} `}>
+         <div className="hoverable-div "  >
+    <div>
+  
+
+      <span className='mb-0  text-xs font-black'>Article Management </span>
+    </div>
+   {menuStates.article ?<MdOutlineKeyboardArrowDown onClick={()=>{
+       setMenuStates(menuStates.companie===false)
+       setMenuStates(menuStates.user===false)
+       setMenuStates(menuStates.appareil===false)
+      }} /> :<MdKeyboardArrowRight onClick={()=>{
+       setMenuStates(menuStates.companie===false)
+      handleIconClick('article')}} />  } 
+  </div>
+ <div className={`${menuStates.article ? 'block': 'hidden'} px-5`}>
+ <div className='flex items-center'><span  className='mb-0  text-lg font-extralight mx-2'  onClick={()=>navigate('/admin/addArticle')}><code>Add Article</code></span></div>
+ <div className='flex items-center'><span  className='mb-0  text-lg font-extralight mx-2'  onClick={()=>navigate('/admin/listArticle')}><code>List Article</code></span></div>
+ </div>
+  
+         </div>
           </div>
           <div className="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
         </nav>

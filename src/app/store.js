@@ -8,6 +8,8 @@ import factureReducer from '../features/factureSlice';
 import conversationReducer from '../features/conversationSlice';
 import notificationReducer from '../features/notificationSlice';
 import devisReducer from '../features/devisSlice';
+import uploadReducer from '../features/uploadSlice'
+import articleReducer from '../features/articleSlice'
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +22,8 @@ export const store = configureStore({
     conversation: conversationReducer,
     notif: notificationReducer,
     devis: devisReducer,
+    uploads:uploadReducer,
+    article:articleReducer
   },
 
 });
