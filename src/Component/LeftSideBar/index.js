@@ -46,10 +46,6 @@ const LeftSideBar = ({showMenuOpen,showMenuClose}) => {
          <div  className='p-3 d-flex align-items-center gap-10' onClick={()=>setClicked('managementcompanie')
       
         } style={{cursor:'pointer'}}><BsBuildingGear className='fs-2 styleIcon' />MANAGEMENT COMPANIE</div>
-
-<div  className='p-3 d-flex align-items-center gap-10' onClick={()=>setClicked('managementappareil')
-      
-    } style={{cursor:'pointer'}}><BsBuildingGear className='fs-2 styleIcon' />MANAGEMENT COMPANIE</div>
          {clicked === "managementcompanie" ? <>
          <div className='p-1 mx-5  d-flex align-items-center gap-10' onClick={()=>handleClick('addcompanie')}><BsBuildingAdd className='styleIcon'  /> ADD COMPANIE</div>
          <div className='p-1 mx-5  d-flex align-items-center gap-10'  onClick={()=>handleClick('listcompanie')} ><BsBuildingCheck className='styleIcon'/> LIST COMPANIE</div>
