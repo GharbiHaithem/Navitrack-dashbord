@@ -15,7 +15,7 @@ const ShowModal = ({productId , open , setOpen}) => {
             };
           }, []);
   return (
-    <div ref={refModal} className='fixed top-0 left-0 w-screen bg-[#0008] flex justify-center items-center h-full'>
+    <div ref={refModal} className='fixed top-0 left-0 w-full bg-[#0008] flex justify-center items-center h-full'>
        <div className='my-5 bg-white w-[60%] mx-auto h-[max-content] rounded-lg '>
            
        <div className='relative'>

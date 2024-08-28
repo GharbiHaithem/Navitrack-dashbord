@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { base_url} from '../utils/base_url';
-const base_url2 ="https://navitrak-node.onrender.com/api"
+const base_url2 ="https://navitrack-spring.onrender.com/api"
 const API = axios.create({baseURL:base_url2});
 API.interceptors.request.use((req)=>{
    if(localStorage.getItem('customer')){
