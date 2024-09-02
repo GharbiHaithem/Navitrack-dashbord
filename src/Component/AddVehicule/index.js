@@ -131,6 +131,10 @@ const AddVehicule = () => {
     formik.setFieldValue('appareil', (appareilValue));
 
   };
+  const handleCarburantChange =(e)=>{
+    formik.setFieldValue('type',e.target.value)
+  } 
+  console.log(formik.values.type) 
   const handleClientChange = (e) => {
     const selectedValue = e.target.value;
     console.log("Nouvelle valeur sélectionnée pour le client:", selectedValue);
@@ -232,13 +236,41 @@ const AddVehicule = () => {
 
               <div style={{ width: '50%' }}>
 
-              <div class="mb-3 m-form__group">
+              {/* <div class="mb-3 m-form__group">
                          <div class="input-group"><span class="input-group-text list-light-primary"><BsFillFuelPumpDieselFill /></span>
                          <input type="text" id="type" className='form-control' onChange={formik.handleChange('type')} value={formik.values.type} name="type"  placeholder='Type carburant ...'  />
                          {formik.touched.type && formik.errors.type && <MessageContainer title={formik.errors.type} />}
                            </div>
-                         </div>
-               
+                         </div> */}
+                         <div class="input-group mb-3">
+                      <button className="btn btn-outline-secondary" type="button"> <BsFillFuelPumpDieselFill /></button>
+                      <select  className="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    id="type"
+                    name="type"
+                    onChange={handleCarburantChange}
+                    value={formik.values.type || ''}
+                 >
+                      <option value="" >
+    {id !== undefined ? vehicule?.type : "Type carburant ..."}
+  </option>
+                  
+
+                      <option value={"Diesel"}>
+                        Diesel
+                      </option>
+                      <option value={"Essence"}>
+                      Essence
+                      </option>
+                      <option value={"Gaz"}>
+                      Gaz
+                      </option>
+                      <option value={"Electrique"}>
+                      Electrique
+                      </option>
+                      </select>
+                   
+                    </div>
                          <div class="mb-3 m-form__group">
                          <div class="input-group"><span class="input-group-text list-light-primary"><ImPower /></span>
                          <input type='number' id="puisanceFiscale" className='form-control' onChange={formik.handleChange('puisanceFiscale')} value={formik.values.puisanceFiscale}  placeholder='puisance Fiscale ...' name="puisanceFiscale" />

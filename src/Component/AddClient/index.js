@@ -15,13 +15,14 @@ import { MdCorporateFare } from "react-icons/md";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { FaAcquisitionsIncorporated } from "react-icons/fa";
+import { BsFillFuelPumpDieselFill } from 'react-icons/bs';
 const AddClient = () => {
     const dispatch = useDispatch()
     const {id} = useParams()
     useEffect(()=>{
     
       if(id !== undefined){
-        alert("get client")
+      
         dispatch(companiefn(id))
       }
     
@@ -65,14 +66,14 @@ const AddClient = () => {
             if(id!== undefined){
               const data={id :id , clientData:values}
               dispatch(editcompanie(data))
-              alert(JSON.stringify(values,null,2))
+            
               dispatch(companies())
               setTimeout(()=>{
                 toast.success(`${formik.values.nomComplet} UPDATED SUCCESS`)
                 navigate(`/admin/listcompanie`)
               },3000)
             }else
-            {alert(JSON.stringify(values,null,2))
+            {
             dispatch(createcompanie(values))}
           }
         })
@@ -87,6 +88,9 @@ const AddClient = () => {
       
         };
         console.log(formik.values.user)
+        const handleSecteurActivityChange=(e)=>{
+          formik.setFieldValue('secteurActivite', (e.target.value));
+        } 
   return (
     <div className="container d-block mx-auto my-5">
     <div className="login-box">
@@ -124,14 +128,105 @@ const AddClient = () => {
                            {formik.touched.telephone && formik.errors.telephone && <MessageContainer  styled={{fontWeight:200,padding:'5px'}}  title={formik.errors.telephone} />}  
                          </div>
                        </div>
-            
-                       <div class="mb-3 m-form__group">
+                       <div class="input-group mb-3">
+                      <button className="btn btn-outline-secondary" type="button"> <MdDomain /></button>
+                      <select  className="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    id="type"
+                    name="type"
+                    onChange={handleSecteurActivityChange}
+                    value={formik.values.secteurActivite || ''}
+                 >
+                      <option value="" >
+    {id !== undefined ? companie?.secteurActivite : "Secteur Activity ..."}
+  </option>
+                  
+
+                      <option value={"Agriculture"}>
+                      Agriculture
+                      </option>
+                      <option value={"Agroalimentaire"}>
+                      Agroalimentaire
+                      </option>
+                      <option value={"Automobile"}>
+                      Automobile
+                      </option>
+                      <option value={"Banque et finance"}>
+                      Banque et finance
+                      </option>
+                      <option value={"Bâtiment et travaux publics (BTP)"}>
+                      Bâtiment et travaux publics (BTP)
+                      </option>
+                      <option value={"Commerce"}>
+                      Commerce
+                      </option>
+                      <option value={"Communication et médias"}>
+                      Communication et médias
+                      </option>
+                      <option value={"Éducation et formation"}>
+                      Éducation et formation
+                      </option>
+                      <option value={"Énergie"}>
+                      Énergie
+                      </option>
+                      <option value={"Environnement"}>
+                      Environnement
+                      </option>
+                      <option value={"Hôtellerie et restauration"}>
+                      Hôtellerie et restauration
+                      </option>
+                      <option value={"Industrie manufacturière"}>
+                      Industrie manufacturière
+                      </option>
+                      <option value={"Informatique et technologie"}>
+                      Informatique et technologie
+                      </option>
+                      <option value={"Logistique et transport"}>
+                      Logistique et transport
+                      </option>
+                      <option value={"Luxe et mode"}>
+                      Luxe et mode
+                      </option>
+                      <option value={"Pharmaceutique et santé"}>
+                      Pharmaceutique et santé
+                      </option>
+                      <option value={"Immobilier"}>
+                      Immobilier
+                      </option>
+                      <option value={"Assurance"}>
+                      Assurance
+                      </option>
+                      <option value={"Recherche et développement"}>
+                      Recherche et développement
+                      </option>
+                      <option value={"Services aux entreprises"}>
+                      Services aux entreprises
+                      </option>
+                      <option value={"Tourisme et loisirs"}>
+                      Tourisme et loisirs
+                      </option>
+                      <option value={"Textile et habillement"}>
+                      Textile et habillement
+                      </option>
+                      <option value={"Aéronautique et spatial"}>
+                      Aéronautique et spatial
+                      </option>
+                      <option value={"Biotechnologie"}>
+                      Biotechnologie
+                      </option>
+                      <option value={"Énergies renouvelables"}>
+                      Énergies renouvelables
+                      </option>
+                      </select>
+                      {formik.touched.secteurActivite && formik.errors.secteurActivite && <MessageContainer  styled={{fontWeight:200}} title={formik.errors.secteurActivite} />}
+                    </div>
+                       {/* <div class="mb-3 m-form__group">
                          
                          <div class="input-group"><span class="input-group-text list-light-primary"><MdDomain /></span>
                            <input type='text'id="secteurActivite" placeholder="secteur d'activite"  onChange={formik.handleChange('secteurActivite')} value={formik.values.secteurActivite} className='form-control' name="secteurActivite"/>
                            {formik.touched.secteurActivite && formik.errors.secteurActivite && <MessageContainer  styled={{fontWeight:200}} title={formik.errors.secteurActivite} />}
                          </div>
-                       </div>
+                       </div> */}
       
           
                        <div class="mb-3 m-form__group">
