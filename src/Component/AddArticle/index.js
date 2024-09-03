@@ -40,7 +40,7 @@ const AddArticle = () => {
     validationSchema: schema,
     enableReinitialize: true,
     onSubmit: (values) => {
-      alert(JSON.stringify(values));
+   
       dispatch(createartice(values));
       formik.resetForm();
       setLocalImageUrls([]);

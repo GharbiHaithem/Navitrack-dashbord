@@ -81,7 +81,7 @@ dispatch(resetMessage())
    
 
     if(id !== undefined && id === user?._id){
-      alert(JSON.stringify(values,null,2))
+     
     
      dispatch(verifPasswords({oldpassword:formik.values.currentPassword}))
      if(!changePass && formik.values.currentPassword === "" && id === user?._id  ) { 
@@ -94,7 +94,7 @@ dispatch(resetMessage())
       const data = {id:id,dataUser : values}
       dispatch(updatesimpleuser(data))}
     else{
-      alert(JSON.stringify(values,null,2))
+   
      
       dispatch(createsimpleuser(values))
       setTimeout(()=>{
@@ -194,7 +194,7 @@ const handleClientChange = (e) => {
 
   // Transformez la valeur sélectionnée en objet avec une propriété "id"
   const clientValue = (selectedValue );
-  console.log(clientValue)
+ 
   // Mettez à jour le state de Formik
   formik.setFieldValue('client', (clientValue));
 

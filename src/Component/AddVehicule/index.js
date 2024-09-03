@@ -65,7 +65,7 @@ const AddVehicule = () => {
     enableReinitialize: true,
     onSubmit: (values) => {
 
-      alert(JSON.stringify(values, null))
+     
       if (id !== undefined) {
         alert("update")
         const data = { id: id, cardata: values }
@@ -76,8 +76,7 @@ const AddVehicule = () => {
         }, 2000)
       } else  {
 
-        alert(JSON.stringify(values, null))
-        alert(JSON.stringify(values.anneeMiseEnCirculation, null))
+     
         dispatch(registreCar(values))
         formik.resetForm()
         setTimeout(() => {
@@ -126,7 +125,7 @@ const AddVehicule = () => {
 
     // Transformez la valeur sélectionnée en objet avec une propriété "id"
     const appareilValue = ({ id: selectedValue });
-    console.log(appareilValue)
+  
     // Mettez à jour le state de Formik
     formik.setFieldValue('appareil', (appareilValue));
 

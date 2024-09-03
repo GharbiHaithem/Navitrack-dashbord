@@ -45,7 +45,7 @@ accessoire:id !== undefined ? appareils?.accessoire :  false
         enableReinitialize: true,
         onSubmit: (values) => {
 
-            alert(JSON.stringify(values,null,2))
+          
           
         
              dispatch(createappareil(values))

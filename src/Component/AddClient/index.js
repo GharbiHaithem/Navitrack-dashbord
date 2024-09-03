@@ -104,9 +104,7 @@ const AddClient = () => {
       
           formik.setFieldValue('logo', selectedFiles);
         };
-        console.log(formik.values.logo_company)
-        console.log(selectedFiles)
-        console.log(localImageUrls)
+       
         useEffect(() => {
           if (_images.length > 0) {
             dispatch(upload(_images));
@@ -119,7 +117,7 @@ const AddClient = () => {
             formik.setFieldValue('logo', images);
           }
         }, [images]);
-       console.log( formik.values.logo)
+      
   return (
     <div className="container d-block mx-auto my-5">
     <div className="login-box">
