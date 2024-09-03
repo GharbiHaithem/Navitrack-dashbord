@@ -66,6 +66,7 @@ export const companieSlice = createSlice({
         state.isLoading = true
      })
      .addCase(companies.fulfilled,(state,action)=>{
+      console.log(action.payload)
         state.isLoading = false
         state.isSuccess = true
         state.companie= action.payload
@@ -88,6 +89,7 @@ export const companieSlice = createSlice({
                 })
                 
                 .addCase(createcompanie.rejected,(state,action)=>{
+                  console.log(action.payload)
                     state.isLoading = false
                     state.isSuccess = false
                     state.isError = true

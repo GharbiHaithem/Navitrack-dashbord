@@ -15,7 +15,8 @@ import { MdCorporateFare } from "react-icons/md";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { FaAcquisitionsIncorporated } from "react-icons/fa";
-import { BsFillFuelPumpDieselFill } from 'react-icons/bs';
+import { BsFillFuelPumpDieselFill, BsUpload } from 'react-icons/bs';
+import { upload } from '../../features/uploadSlice';
 const AddClient = () => {
     const dispatch = useDispatch()
     const {id} = useParams()
@@ -40,7 +41,7 @@ const AddClient = () => {
       }) 
    
       const[msg,setMsg]=useState('')
-     
+      const [_images, set_Images] = useState([]);
      
     
  
@@ -58,7 +59,7 @@ const AddClient = () => {
           telephone:id !== undefined  ? companie?.telephone  : "",
           secteurActivite:id !== undefined  ? companie?.secteurActivite :"",
           nomComplet:id !== undefined  ? companie?.nomComplet : "",
-       
+          logo:id !== undefined  ? companie?.logo : [] || [],
          },
          validationSchema:signupSchema,
          enableReinitialize:true,
@@ -82,7 +83,7 @@ const AddClient = () => {
       
           // Transformez la valeur sélectionnée en objet avec une propriété "id"
           const clientValue = ({ _id: selectedValue });
-          console.log(clientValue)
+        
           // Mettez à jour le state de Formik
           formik.setFieldValue('user', (clientValue));
       
@@ -91,6 +92,34 @@ const AddClient = () => {
         const handleSecteurActivityChange=(e)=>{
           formik.setFieldValue('secteurActivite', (e.target.value));
         } 
+        const [localImageUrls, setLocalImageUrls] = useState([]);
+        const [selectedFiles, setSelectedFiles] = useState([]);
+        const handleSelectFile = (event) => {
+          const selectedFiles = Array.from(event.target.files);
+          setSelectedFiles(selectedFiles);
+          set_Images(selectedFiles);
+          
+          const urls = selectedFiles.map((file) => URL.createObjectURL(file));
+          setLocalImageUrls(urls);
+      
+          formik.setFieldValue('logo', selectedFiles);
+        };
+        console.log(formik.values.logo_company)
+        console.log(selectedFiles)
+        console.log(localImageUrls)
+        useEffect(() => {
+          if (_images.length > 0) {
+            dispatch(upload(_images));
+          }
+        }, [_images, dispatch]);
+        const { images, isLoading } = useSelector(state => state.uploads);
+
+        useEffect(() => {
+          if (images.length > 0) {
+            formik.setFieldValue('logo', images);
+          }
+        }, [images]);
+       console.log( formik.values.logo)
   return (
     <div className="container d-block mx-auto my-5">
     <div className="login-box">
@@ -98,6 +127,17 @@ const AddClient = () => {
         <form onSubmit={formik.handleSubmit} >
     <div className='d-flex align-items-center gap-40'>
     <div className='w-50'>
+    <div className="form-group mt-1 flex flex-col w-full gap-1">
+          <label className="custom-file-upload">
+            <input type="file"  accept="image/jpeg, image/jpg"  placeholder="Année de fabrication" disabled={isLoading} onChange={handleSelectFile} />
+            <div className='flex items-center gap-2'>
+              <BsUpload />
+              <span className='mx-3'> Logo</span>
+            </div>
+          </label>
+          <span className='text-xs font-extralight'>Format JPG ou JPEG uniquement</span>
+          <img className='mt-5' src={localImageUrls} alt={`Local Preview `} style={{ width: '300px', height: 'auto', margin: '10px' }} />
+        </div>
     <div className="input-group mb-3"><span className="input-group-text" id="inputGroup-sizing-default"><MdCorporateFare /></span>
                       <input className="form-control" type="text"  placeholder="Raison Sociale" onChange={formik.handleChange('raisonSociale')} value={formik.values.raisonSociale} id="raisonSociale" name="raisonSociale" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                       {formik.touched.raisonSociale && formik.errors.raisonSociale && <MessageContainer styled={{fontWeight:'200',padding:'5px'}} title={formik.errors.raisonSociale} />}

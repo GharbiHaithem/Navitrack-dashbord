@@ -21,6 +21,7 @@ export const companies = async()=>{
     return await response.data 
 }
 export const createClient = async(dataClient)=>{
+    console.log(dataClient)
     const response = await axios.post(`${base_url2}/client/save`,dataClient)
     return await response.data
 }
