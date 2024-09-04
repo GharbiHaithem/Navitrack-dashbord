@@ -340,7 +340,7 @@ const[productId,setProductId]=useState()
 
           <Route path='/register' element={<Register/>} />       <Route
           path="/admin"
-          element={<Layout  socket={socket}  setNotif={setNotif} notif={notif}  openMenu={openMenu} setOpenMenu={setOpenMenu} setMenuStates={setMenuStates} menuStates={menuStates} />}
+          element={<Layout  socket={socket}  setNotif={setNotif} notif={notif}  openMenu={openMenu} setOpenMenu={setOpenMenu} setMenuStates={setMenuStates} menuStates={menuStates} isScreenSmall={isScreenSmall} />}
         >
           <Route index element={<Dashboard />} />
           <Route path="addUser" element={<AddUser/>} />

@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import NotifDevis from '../NotifDevis'
 import './style.css'
-const NavBar = ({openMenu,setOpenMenu,notif,setNotif }) => {
+const NavBar = ({openMenu,setOpenMenu,notif,setNotif,isScreenSmall }) => {
 const navigate= useNavigate()
 const dispatch=useDispatch()
 const{user} = useSelector(state=>state?.auth)
@@ -41,10 +41,10 @@ const handleDelete = (id)=>{
       </svg>
     </div> */}
   
-    <div className="page-wrapper compact-wrapper" id="pageWrapper">
+    <div className="page-wrapper compact-wrapper"  id="pageWrapper">
    
-    <div className={`w-[100%] h-[90px] page-header ${openMenu ? 'open' : 'close'}`} >
-        <div className="header-wrapper flex justify-between items-center  row m-0">
+    <div style={{border:"1px solid red"}} className={`w-[100%] h-[80px] page-header ${openMenu ? 'open' : 'close'}`} >
+        <div className={`header-wrapper ${isScreenSmall ?  "translate-y-11" : ''}  flex justify-between items-center  row m-0`}>
           {/* <form className="form-inline search-full col" action="#" method="get">
             <div className="form-group w-100">
               <div className="Typeahead Typeahead--twitterUsers">
@@ -62,13 +62,14 @@ const handleDelete = (id)=>{
        {openMenu ? (<MdOutlineArrowBackIos style={{}} className='font-bold text-blue-800 text-2xl cursor-pointer'  onClick={()=>{
       
         setOpenMenu(!openMenu)}}/>) : (
-         <CiMenuFries  style={{}} className='font-bold text-blue-800 text-2xl cursor-pointer'  onClick={()=>setOpenMenu(!openMenu)} />
+         <CiMenuFries  className='font-bold text-blue-800 text-2xl cursor-pointer'  onClick={()=>setOpenMenu(!openMenu)} />
        ) }  
            
           </div>
           <div className="nav-right  w-[500px]  pull-right right-header p-3 ms-auto"  style={{transform: "translateY(-45px)"}}>
             <ul className="nav-menus">
-             
+             {JSON.stringify(isScreenSmall)}
+            {!isScreenSmall && <>
               <li>                         <span className="header-search">
                   <svg>
                     <use href="../../assets/svg/icon-sprite.svg#search"></use>
@@ -172,6 +173,7 @@ const handleDelete = (id)=>{
                   </ul>
                 </div>
               </li>
+            </> }  
               <li className="onhover-dropdown">
                 <div className="notification-box">
                   <svg>
