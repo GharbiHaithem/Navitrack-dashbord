@@ -6,6 +6,12 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { useNavigate } from 'react-router';
 import './style.css'
+import { ImUsers } from "react-icons/im";
+import { IoHome } from "react-icons/io5";
+import { FaBlog } from "react-icons/fa";
+import { RiGpsFill } from "react-icons/ri";
+import { PiCarFill } from "react-icons/pi";
+import { SiHomeassistantcommunitystore } from "react-icons/si";
 const MenuBar = ({setMenuStates,menuStates}) => {
   const navigate =useNavigate()
     const handleIconClick = (menuName) => {
@@ -15,25 +21,29 @@ const MenuBar = ({setMenuStates,menuStates}) => {
         }));
       };
   return (
-    <div className="page-body-wrapper">
+    <div className="page-body-wrapper h-full"  style={{border:"1px solid black",height:"100%"}}>
       
-    <div className="sidebar-wrapper absolute w-[150px] sm:w-[250px]" style={{height:"100vh"}} sidebarLayout="stroke-svg">
+    <div className="sidebar-wrapper absolute w-[150px] sm:w-[250px]" style={{height:"100%"}} sidebarLayout="stroke-svg">
    
-      <div className=''>
+      <div className='w-full h-full'>
         <div className="logo-wrapper mx-auto text-center w-[50%] mt-4"><a href="index.html"><img className="img-fluid for-light" src="../../assets/images/logo/logo.png" alt=""/><img className="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" alt=""/></a>
          
    
         </div>
        
-        <nav className="sidebar-main mt[506px]" style={{marginTop:'55px',marginLeft:"10px",width:'100%'}}>
+        <nav className="sidebar-main  h-full bg-white shadow-xl" >
           <div className="left-arrow" id="left-arrow"><i dataFeather="arrow-left"></i></div>
-          <div id="sidebar-menu ">
+          <div id="sidebar-menu p-3 px-[55px]">
+          <div className='flex items-center p-2 text-base font-medium gap-2' style={{marginTop:"70px"}}>
+          <IoHome /> Dashboard
+          </div>
           <div className={`p-2   flex flex-col ${menuStates.user ? "bg-gray-200 text-black" :"transparent"} `}>
          <div className="hoverable-div "  >
-    <div>
+         
+    <div className='flex items-center gap-2 p-2'>
   
-
-      <span className='mb-0  text-xs font-black'>User Management </span>
+    <ImUsers />
+      <span className='mb-0  text-base font-medium'>User </span>
     </div>
    {menuStates.user ?<MdOutlineKeyboardArrowDown onClick={()=>{
        setMenuStates(menuStates.companie===false)
@@ -51,9 +61,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
          </div>
          <div className={`p-2 flex flex-col ${menuStates.companie ? "bg-gray-200 text-black" :"transparent"} `}>
   <div className="hoverable-div  ">
-    <div>
-   
-      <span className='mb-0  text-xs font-black '>Company Management</span>
+    <div  className='flex items-center gap-2 p-2'>
+    <SiHomeassistantcommunitystore />
+      <span className='mb-0   text-base font-medium'>Company </span>
     </div>
     {menuStates.companie ?<MdOutlineKeyboardArrowDown  onClick={()=>{
       setMenuStates(menuStates.user===false)
@@ -71,9 +81,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
   </div>
   <div className={`p-2  flex flex-col ${menuStates.appareil ? "bg-gray-200 text-black" :"transparent"} `}>
   <div className="hoverable-div  ">
-    <div>
-   
-      <span className='mb-0  text-xs font-black '>appareil Management</span>
+    <div  className='flex items-center gap-2 p-2'>
+    <RiGpsFill />
+      <span className='mb-0   text-base font-medium '>Appareil </span>
     </div>
     {menuStates.appareil ?<MdOutlineKeyboardArrowDown  onClick={()=>{
       setMenuStates(menuStates.user===false)
@@ -93,9 +103,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
   </div>
   <div className={`p-2 flex flex-col ${menuStates.vehicule ? "bg-gray-200 text-black" :"transparent"} `}>
   <div className="hoverable-div  ">
-    <div>
-   
-      <span className='mb-0  text-xs font-black '>vehicule Management</span>
+    <div  className='flex items-center gap-2 p-2'>
+    <PiCarFill />
+      <span className='mb-0   text-base font-medium '>vehicule </span>
     </div>
     {menuStates.vehicule ?<MdOutlineKeyboardArrowDown  onClick={()=>{
       setMenuStates(menuStates.user===false)
@@ -119,10 +129,10 @@ const MenuBar = ({setMenuStates,menuStates}) => {
   </div>
   <div className={`p-2   flex flex-col ${menuStates.user ? "bg-gray-200 text-black" :"transparent"} `}>
          <div className="hoverable-div "  >
-    <div>
+    <div  className='flex items-center gap-2 p-2'>
   
-
-      <span className='mb-0  text-xs font-black'>Article Management </span>
+    <FaBlog />
+      <span className='mb-0   text-base font-medium'>Article  </span>
     </div>
    {menuStates.article ?<MdOutlineKeyboardArrowDown onClick={()=>{
        setMenuStates(menuStates.companie===false)
