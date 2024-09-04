@@ -25,6 +25,7 @@ const handleDelete = (id)=>{
  const finddata = notif?.find((n)=>n?._id === id)
  toast.error(` ${finddata?.nomComplet} deleted successfuly`)
 }
+const [oppened,setOppened] =useState(false)
   return (
     <div>
  
@@ -43,8 +44,8 @@ const handleDelete = (id)=>{
   
     <div className="page-wrapper compact-wrapper"  id="pageWrapper">
    
-    <div style={{border:"1px solid red"}} className={`w-[100%] h-[80px] page-header ${openMenu ? 'open' : 'close'}`} >
-        <div className={`header-wrapper ${isScreenSmall ?  "translate-y-11" : ''}  flex justify-between items-center  row m-0`}>
+    <div  className={`w-[100%] h-[80px] page-header ${openMenu ? 'open' : 'close'}`} >
+        <div className={`header-wrapper   flex justify-between items-center  row m-0`}>
           {/* <form className="form-inline search-full col" action="#" method="get">
             <div className="form-group w-100">
               <div className="Typeahead Typeahead--twitterUsers">
@@ -58,7 +59,7 @@ const handleDelete = (id)=>{
           </form> */}
 
        
-          <div  className="left-header w-[50px] z-50  p-1"  >
+          <div  className="left-header w-[120px] z-50  p-1" >
        {openMenu ? (<MdOutlineArrowBackIos style={{}} className='font-bold text-blue-800 text-2xl cursor-pointer'  onClick={()=>{
       
         setOpenMenu(!openMenu)}}/>) : (
@@ -66,9 +67,9 @@ const handleDelete = (id)=>{
        ) }  
            
           </div>
-          <div className="nav-right  w-[500px]  pull-right right-header p-3 ms-auto"  style={{transform: "translateY(-45px)"}}>
+          <div className="nav-right  w-full  pull-right right-header p-3 ms-auto"  style={{transform: "translateY(-45px)"}}>
             <ul className="nav-menus">
-             {JSON.stringify(isScreenSmall)}
+           
             {!isScreenSmall && <>
               <li>                         <span className="header-search">
                   <svg>
@@ -174,7 +175,7 @@ const handleDelete = (id)=>{
                 </div>
               </li>
             </> }  
-              <li className="onhover-dropdown">
+              <li className="onhover-dropdown"  style={{transform: isScreenSmall ? "translateY(-15px)" :""}}>
                 <div className="notification-box">
                   <svg>
                     <use href="../../assets/svg/icon-sprite.svg#notification"></use>
@@ -204,8 +205,12 @@ const handleDelete = (id)=>{
                 </div>
               </li>
               <li className="profile-nav onhover-dropdown pe-0 py-0">
-                <div className="media profile-media"><img className="b-r-10" src="../../assets/images/dashboard/profile.png" alt=""/>
-                  <div className="media-body  hidden md:block"><span>{user?.lastname + " " +user?.firstname}</span>
+                <div onMouseEnter={()=>{
+                
+                  setOppened(true)}}
+                  onMouseLeave={()=> setOppened(false)}
+                   className="media profile-media justify-end  "><img className="b-r-10" src="../../assets/images/dashboard/profile.png" alt=""/>
+                  <div className=" md:block"><span  className='sm:text-xs '  style={{fontSize:"11px !important"}}>{user?.lastname + " " +user?.firstname}</span>
                     <p className="mb-0">Admin <MdAdminPanelSettings className='fs-7'/></p>
                   </div>
                 </div>
@@ -219,6 +224,20 @@ const handleDelete = (id)=>{
               dispatch(logOut())
             }}><a href="#"><i data-feather="log-in" > </i><span>Log Out</span></a></li>
                 </ul>
+
+
+                {oppened && isScreenSmall &&<>
+                  <ul  className="profile-dropdown bg-white shadow-xl pe-0 py-0 absolute right-10 top-5" >
+                  <li><a href="#"><i data-feather="user"></i><span>Account </span></a></li>
+                  <li><a href="#"><i data-feather="mail"></i><span>Inbox</span></a></li>
+                  <li><a href="#"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
+                  <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
+                  <li onClick={() => {
+              navigate('/')
+              dispatch(logOut())
+            }}><a href="#"><i data-feather="log-in" > </i><span>Log Out</span></a></li>
+                </ul>
+                </>}
               </li>
             </ul>
           </div>
