@@ -1,5 +1,5 @@
 import axios from 'axios'
-const VITE_PUBLIC_URL   ="https://navitrak-node-1.onrender.com/api"
+const VITE_PUBLIC_URL   ="https://navitrak-node-production.up.railway.app/api"
 
 // import { config } from '../../utils/axiosConfig'
 
