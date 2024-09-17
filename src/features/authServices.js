@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {  base_url2 } from '../utils/base_url';
-const base_url = "https://navitrak-node-production.up.railway.app/api"
+const base_url = "http://navitrak-node-production.up.railway.app/api"
 const API = axios.create({baseURL:base_url});
 API.interceptors.request.use((req)=>{
    if(localStorage.getItem('customer')){
