@@ -122,7 +122,7 @@ const Login = () => {
                         <input id="checkbox1" type="checkbox" />
                         <label className="text-muted" htmlFor="checkbox1">Remember password</label>
                       </div>
-                      <Link to={"/register"} className="link" href="forget-password.html"  >Forgot password?</Link>
+                      <Link to={"/register"} className="link"  >Forgot password?</Link>
                       <div className="text-end mt-3">
                         <button className="btn btn-primary btn-block w-100" type="submit">Sign in</button>
                       </div>
