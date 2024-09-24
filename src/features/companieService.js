@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { base_url } from '../utils/base_url';
-const base_url2 ="https://navitrack-spring-production.up.railway.app/api"
+const base_url2 ="http:/localhost:5500/api"
 const API = axios.create({baseURL:base_url2});
 API.interceptors.request.use((req)=>{
    if(localStorage.getItem('customer')){
