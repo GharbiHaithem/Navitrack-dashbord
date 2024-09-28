@@ -41,7 +41,16 @@ function App() {
   const dispatch = useDispatch()
 
 
-  const socket = useRef(io("ws://localhost:8900"))
+  const socket = useRef(); // Utilisez useRef pour stocker le socket
+  useEffect(() => {
+    // Initialisez le socket
+    socket.current = io("https://socket-io-navitrack.railway.internal");
+    
+    // Déconnexion propre lors du démontage du composant
+    return () => {
+      socket.current.disconnect();
+    };
+  }, []); // Ce useEffect n'a besoin de s'exécuter qu'une seule fois lors du montage
   const {notification} = useSelector(state=>state?.notif)
   const [devisIds, setDevisIds] = useState([]);
 
@@ -281,7 +290,7 @@ console.log(firstFact)
   const generateAndUploadPdf = async (htmlContent,factureId) => {
     try {
       // Envoyer le contenu HTML au backend
-      const response = await axios.post('http://localhost:5500/api/generate-and-upload-pdf', {
+      const response = await axios.post('https://navitrack-spring-server-production.up.railway.app/api/generate-and-upload-pdf', {
         htmlContent: htmlContent,
         factureId:factureId
       },{
