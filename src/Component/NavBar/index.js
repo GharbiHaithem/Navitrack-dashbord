@@ -176,10 +176,11 @@ const [oppened,setOppened] =useState(false)
               </li>
             </> }  
               <li className="onhover-dropdown"  style={{transform: isScreenSmall ? "translateY(-15px)" :""}}>
-                <div className="notification-box">
+                <div onTouchStart={() => alert('notif')}
+  onClick={() => alert('notif')} className="notification-box p-2">
                   <svg>
                     <use href="../../assets/svg/icon-sprite.svg#notification"></use>
-                  </svg><span className="badge rounded-pill badge-secondary">{notif?.length} </span>
+                  </svg><span className="badge rounded-pill  translate-y-2 -translate-x-2 badge-secondary">{notif?.length} </span>
                 </div>
                 <div className="onhover-show-div notification-dropdown h-[400px] overflow-y-scroll scroll-container">
                   <h6 className="f-18 mb-0 dropdown-title">Notitications</h6>
@@ -210,11 +211,11 @@ const [oppened,setOppened] =useState(false)
                   setOppened(true)}}
                   onMouseLeave={()=> setOppened(false)}
                    className="media profile-media justify-end  "><img className="b-r-10" src="../../assets/images/dashboard/profile.png" alt=""/>
-                  <div className=" md:block"><span  className='sm:text-xs '  style={{fontSize:"11px !important"}}>{user?.lastname + " " +user?.firstname}</span>
-                    <p className="mb-0">Admin <MdAdminPanelSettings className='fs-7'/></p>
+                  <div className=" md:block www"><span  className='sm:text-xs font-medium text-xs px-2 uppercase -translate-y-[15px]' >{user?.lastname + " " +user?.firstname}</span>
+                    <p className="mb-0 sm:text-xs font-extralight text-xs px-2">Admin <MdAdminPanelSettings className='fs-7'/></p>
                   </div>
                 </div>
-                <ul className="profile-dropdown onhover-show-div">
+                <ul className="profile-dropdown onhover-show-div sm:text-xs font-semibold text-xl">
                   <li><a href="#"><i data-feather="user"></i><span>Account </span></a></li>
                   <li><a href="#"><i data-feather="mail"></i><span>Inbox</span></a></li>
                   <li><a href="#"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
