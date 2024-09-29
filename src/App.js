@@ -44,7 +44,7 @@ function App() {
   const socket = useRef(); // Utilisez useRef pour stocker le socket
   useEffect(() => {
     // Initialisez le socket
-    socket.current = io("https://socket-io-navitrack.railway.internal");
+    socket.current = io("wss://socket-io-navitrack-production.up.railway.app");
     
     // Déconnexion propre lors du démontage du composant
     return () => {
