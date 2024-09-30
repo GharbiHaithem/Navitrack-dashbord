@@ -211,7 +211,7 @@ const [oppened,setOppened] =useState(false)
                   setOppened(true)}}
                   onMouseLeave={()=> setOppened(false)}
                    className="media profile-media justify-end  "><img className="b-r-10" src="../../assets/images/dashboard/profile.png" alt=""/>
-                  <div className=" md:block www"><span  className='sm:text-xs font-medium text-xs px-2 uppercase -translate-y-[15px]' >{user?.lastname + " " +user?.firstname}</span>
+                  <div className=" md:block www"><span  className='sm:text-xs font-medium text-xs px-2 uppercase -translate-y-[5px]' >{user?.lastname + " " +user?.firstname}</span>
                     <p className="mb-0 sm:text-xs font-extralight text-xs px-2">Admin <MdAdminPanelSettings className='fs-7'/></p>
                   </div>
                 </div>
