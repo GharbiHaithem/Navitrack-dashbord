@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 
 import '../../assets/css/style.css';
@@ -25,6 +25,23 @@ const handleDelete = (id)=>{
  const finddata = notif?.find((n)=>n?._id === id)
  toast.error(` ${finddata?.nomComplet} deleted successfuly`)
 }
+const [showDropNotif,setShowDropNotif] =useState(false)
+   const menuRef = useRef();
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setShowDropNotif(false);
+      console.log('Menu closed');
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
 const [oppened,setOppened] =useState(false)
   return (
     <div>
@@ -175,14 +192,39 @@ const [oppened,setOppened] =useState(false)
                 </div>
               </li>
             </> }  
-              <li className="onhover-dropdown"  style={{transform: isScreenSmall ? "translateY(-15px)" :""}}>
-                <div onTouchStart={() => alert('notif')}
-  onClick={() => alert('notif')} className="notification-box p-2">
-                  <svg>
+              <li className="onhover-dropdown  relative"  style={{transform: isScreenSmall ? "translateY(-5px)" :""}}>
+                <div  onTouchStart={() => setShowDropNotif(true)}
+  onClick={() => setShowDropNotif(true)} className="notification-box   p-2">
+                 <svg className='w-8 h-8 '>
                     <use href="../../assets/svg/icon-sprite.svg#notification"></use>
                   </svg><span className="badge rounded-pill  translate-y-2 -translate-x-2 badge-secondary">{notif?.length} </span>
+                  {showDropNotif && isScreenSmall && 
+                  <div  ref={menuRef} className={`absolute -translate-x-32 top-[35px] bg-white shadow-xl  x h-[400px] w-[250px] overflow-y-scroll scroll-container`}>
+                  <h6 className="f-18 mb-0 dropdown-title text-start px-5 mt-4">Notitications</h6>
+              
+                    
+                      
+                   {
+                    notif?.map((c)=>(
+                   <div  className='flex justify-between items-center X'  >
+                     <NotifDevis key={c?._id} className={'p-3  '} onClick={()=>{
+                      navigate(`/admin/devis/${c?._id}`)
+                    }}  msg={c}  /> 
+                    <span  className='mr-[30px]' onClick={(e)=>{
+                      e.stopPropagation();
+                      handleDelete(c?._id)
+                     }} >X</span>
+                   </div>
+                    ))
+                   }
+                   
+                  
+              
                 </div>
-                <div className="onhover-show-div notification-dropdown h-[400px] overflow-y-scroll scroll-container">
+     
+                }
+                </div>
+        <div className={` onhover-show-div notification-dropdown x h-[400px] overflow-y-scroll scroll-container`}>
                   <h6 className="f-18 mb-0 dropdown-title">Notitications</h6>
               
                     
@@ -204,14 +246,16 @@ const [oppened,setOppened] =useState(false)
                   
               
                 </div>
+               
               </li>
               <li className="profile-nav onhover-dropdown pe-0 py-0">
+           
                 <div onMouseEnter={()=>{
                 
                   setOppened(true)}}
                   onMouseLeave={()=> setOppened(false)}
                    className="media profile-media justify-end  "><img className="b-r-10" src="../../assets/images/dashboard/profile.png" alt=""/>
-                  <div className=" md:block www"><span  className='sm:text-xs font-medium text-xs px-2 uppercase -translate-y-[15px]' >{user?.lastname + " " +user?.firstname}</span>
+                  <div className=" md:block www"><span  className='sm:text-xs font-medium text-xs px-2 uppercase -translate-y-[5px]' >{user?.lastname + " " +user?.firstname}</span>
                     <p className="mb-0 sm:text-xs font-extralight text-xs px-2">Admin <MdAdminPanelSettings className='fs-7'/></p>
                   </div>
                 </div>

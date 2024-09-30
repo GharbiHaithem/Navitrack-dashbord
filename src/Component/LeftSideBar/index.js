@@ -10,6 +10,7 @@ import {TbGps} from 'react-icons/tb'
 import {BsBuildingGear,BsBuildingAdd,BsBuildingCheck} from 'react-icons/bs'
 const LeftSideBar = ({showMenuOpen,showMenuClose}) => {
     const[clicked,setClicked] = useState(null)
+   
    const navigate = useNavigate()
     const handleClick = (nameDiv)=>{
       setClicked(nameDiv)

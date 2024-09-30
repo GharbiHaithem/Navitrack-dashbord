@@ -40,3 +40,6 @@
 .scroll-container::-webkit-scrollbar-thumb:hover {
     background: #555; /* Couleur de la barre de défilement au survol */
 }
+.onhover-show-div .notification-dropdown{
+  border:1px solid red !important
+}
