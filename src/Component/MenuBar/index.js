@@ -43,7 +43,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
     <div className='flex items-center gap-2 p-2'>
   
     <ImUsers />
-      <span className='mb-0  text-base uppercase font-medium'>User </span>
+      <span className='mb-0  text-base uppercase font-medium'   onClick={()=>{
+       setMenuStates(menuStates.companie===false)
+      handleIconClick('user')}}>User </span>
     </div>
    {menuStates.user ?<MdOutlineKeyboardArrowDown onClick={()=>{
        setMenuStates(menuStates.companie===false)
@@ -63,7 +65,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
   <div className="hoverable-div  ">
     <div  className='flex items-center gap-2 p-2'>
     <SiHomeassistantcommunitystore />
-      <span className='mb-0   text-base font-medium'>Company </span>
+      <span className='mb-0   text-base font-medium' onClick={()=>{
+      setMenuStates(menuStates.user===false)
+      handleIconClick('companie')}}>Company </span>
     </div>
     {menuStates.companie ?<MdOutlineKeyboardArrowDown  onClick={()=>{
       setMenuStates(menuStates.user===false)
@@ -83,7 +87,11 @@ const MenuBar = ({setMenuStates,menuStates}) => {
   <div className="hoverable-div  ">
     <div  className='flex items-center gap-2 p-2'>
     <RiGpsFill />
-      <span className='mb-0   text-base font-medium '>Appareil </span>
+      <span className='mb-0   text-base font-medium '  onClick={()=>{
+      setMenuStates(menuStates.user===false)
+      setMenuStates(menuStates.companie===false)
+      
+      handleIconClick('appareil')}}>Appareil </span>
     </div>
     {menuStates.appareil ?<MdOutlineKeyboardArrowDown  onClick={()=>{
       setMenuStates(menuStates.user===false)
@@ -105,7 +113,13 @@ const MenuBar = ({setMenuStates,menuStates}) => {
   <div className="hoverable-div  ">
     <div  className='flex items-center gap-2 p-2'>
     <PiCarFill />
-      <span className='mb-0   text-base font-medium '>vehicule </span>
+      <span className='mb-0   text-base font-medium '  onClick={()=>{
+      setMenuStates(menuStates.user===false)
+      setMenuStates(menuStates.companie===false)
+      setMenuStates(menuStates.appareil===false)
+      
+      
+      handleIconClick('vehicule')}}>vehicule </span>
     </div>
     {menuStates.vehicule ?<MdOutlineKeyboardArrowDown  onClick={()=>{
       setMenuStates(menuStates.user===false)
@@ -132,7 +146,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
     <div  className='flex items-center gap-2 p-2'>
   
     <FaBlog />
-      <span className='mb-0   text-base font-medium'>Article  </span>
+      <span className='mb-0   text-base font-medium' onClick={()=>{
+       setMenuStates(menuStates.companie===false)
+      handleIconClick('article')}}>Article  </span>
     </div>
    {menuStates.article ?<MdOutlineKeyboardArrowDown onClick={()=>{
        setMenuStates(menuStates.companie===false)

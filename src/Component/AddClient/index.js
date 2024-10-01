@@ -123,9 +123,9 @@ const AddClient = () => {
     <div className="login-box">
        <div  className='mt-[80px]'> <span style={{fontSize:'25px' , fontWeight:'600'}}>{id !== undefined ? 'UPDATE COMPANIE' : 'ADD COMPANIE'}</span></div>
         <form onSubmit={formik.handleSubmit} >
-    <div className='d-flex align-items-center gap-40'>
-    <div className='w-50'>
-    <div className="form-group mt-1 flex flex-col w-full gap-1">
+    <div className='flex md:flex-row flex-col align-items-center gap-10'>
+    <div className='md:w-1/2 w-full'>
+    <div className="form-group  mt-1 flex flex-col w-full gap-1">
           <label className="custom-file-upload">
             <input type="file"  accept="image/jpeg, image/jpg"  placeholder="Année de fabrication" disabled={isLoading} onChange={handleSelectFile} />
             <div className='flex items-center gap-2'>
@@ -134,7 +134,7 @@ const AddClient = () => {
             </div>
           </label>
           <span className='text-xs font-extralight'>Format JPG ou JPEG uniquement</span>
-          <img className='mt-5' src={localImageUrls} alt={`Local Preview `} style={{ width: '300px', height: 'auto', margin: '10px' }} />
+        {localImageUrls.length>0 &&  <img className='mt-5' src={localImageUrls} alt={`Local Preview `} style={{ width: '300px', height: 'auto', margin: '10px' }} />}
         </div>
     <div className="input-group mb-3"><span className="input-group-text" id="inputGroup-sizing-default"><MdCorporateFare /></span>
                       <input className="form-control" type="text"  placeholder="Raison Sociale" onChange={formik.handleChange('raisonSociale')} value={formik.values.raisonSociale} id="raisonSociale" name="raisonSociale" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
@@ -157,7 +157,7 @@ const AddClient = () => {
                           </div>
           
           </div>
-           <div className='w-50 mb-0'>
+           <div className='md:w-1/2 w-full mb-0'>
           
            <div class="mb-3 m-form__group">
                          
@@ -279,7 +279,7 @@ const AddClient = () => {
            </div>
     </div>
        
-            <button type="submit" className='yyyaaa styleButton mt-2 mb-4 btn-sm  ' >{id !== undefined ? 'UPDATE COMPANIE' : 'ADD COMPANIE'}</button>
+            <button type="submit" className='btn btn-primary btn-block w-100 mt-2  ' >{id !== undefined ? 'UPDATE COMPANIE' : 'ADD COMPANIE'}</button>
            {/* <span className='mt-2' style={{fontWeight:300,cursor:'pointer'}}> Already Have an account ?  ?<Link  to={'/'} className='text-primary'> Login</Link></span> */}
         </form>
     </div>

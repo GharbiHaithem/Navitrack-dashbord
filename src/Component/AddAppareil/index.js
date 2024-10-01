@@ -90,8 +90,8 @@ accessoire:id !== undefined ? appareils?.accessoire :  false
                 <div style={{ boxShadow: '0 0 1px black',marginTop:'150px', padding: '5px' }}> <h5 style={{ fontWeight: 100 }}><TextAnnimation text={id !== undefined ? "UPDATE APPAREIL" :"ADD APPAREIL"}/></h5></div>
                 <form onSubmit={formik.handleSubmit} >
                     <div className='d-flex flex-column gap-10'>
-                        <div className='d-flex gap-10 mt-3'>
-                            <div style={{ width: '50%' }}>
+                        <div className='flex md:flex-row flex-col gap-10 mt-3'>
+                            <div className='md:w-1/2 w-full' >
                                 <div className="input-container mb-3">
                                 
                                     <input type="text" placeholder='Model Tag'  onChange={formik.handleChange('modelTag')} value={formik.values.modelTag} className='form-control' id="model" name="model" />
@@ -131,7 +131,7 @@ accessoire:id !== undefined ? appareils?.accessoire :  false
 
                             </div>
 
-                            <div style={{ width: '50%' }}>
+                            <div  className='md:w-1/2 w-full' >
 
                             <div className="form-group mb-3">
 
@@ -187,7 +187,7 @@ accessoire:id !== undefined ? appareils?.accessoire :  false
                     </div>
 
 
-                    <button className=' mt-4 yyyaaa styleButton mx-auto block ' type='submit'>{id !== undefined ? "UPDATE APPAREIL" :"ADD APPAREIL"}</button>
+                    <button className="btn btn-primary btn-block w-100" type='submit'>{id !== undefined ? "UPDATE APPAREIL" :"ADD APPAREIL"}</button>
 
                 </form>
             </div>

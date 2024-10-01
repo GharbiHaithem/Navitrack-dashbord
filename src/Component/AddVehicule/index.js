@@ -157,11 +157,11 @@ const AddVehicule = () => {
     <div className="container">
       <div className="login-box">
 
-        <div style={{ boxShadow: '0 0 1px black',marginTop:'150px', padding: '5px' }}> <h5 style={{ fontWeight: 100 }}><TextAnnimation text={`${id ? 'UPDATE CAR' : 'ADD CAR'} `} /></h5></div>
+        <div style={{ boxShadow: '0 0 1px black',marginTop:'100px', padding: '5px' }}> <h5 style={{ fontWeight: 100 }}><TextAnnimation text={`${id ? 'UPDATE CAR' : 'ADD CAR'} `} /></h5></div>
         <form onSubmit={formik.handleSubmit}>
           <div className='d-flex flex-column gap-10'>
-            <div className='d-flex gap-10 mt-3'>
-              <div style={{ width: '50%' }}>
+            <div className='flex md:flex-col flex-col gap-10 mt-3'>
+              <div  className='md:w-1/2 w-full' >
               <div class="mb-3 m-form__group">
                            
                             <div class="input-group"><span class="input-group-text list-light-primary"><TbNumber /></span>
@@ -233,7 +233,7 @@ const AddVehicule = () => {
 
               </div>
 
-              <div style={{ width: '50%' }}>
+              <div className='md:w-1/2 w-full'>
 
               {/* <div class="mb-3 m-form__group">
                          <div class="input-group"><span class="input-group-text list-light-primary"><BsFillFuelPumpDieselFill /></span>

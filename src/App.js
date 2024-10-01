@@ -37,6 +37,7 @@ import { base_url } from './utils/base_url';
 import AddArticle from './Component/AddArticle';
 import ListArticles from './Component/ListArticles';
 import ShowModal from './Component/ShowModal';
+import { OpenRoute } from './routes/openRoute';
 function App() {
   const dispatch = useDispatch()
 
@@ -341,7 +342,7 @@ const[productId,setProductId]=useState()
     <>
     <BrowserRouter>
       <Routes>
-      <Route exact  path='/' element={<Login/>}   />
+      <Route exact  path='/' element={<OpenRoute><Login/></OpenRoute>}   />
           <Route path={'auth2facteur'} element={<Auth2Facteur/>} />
           <Route  path='/:token' element={<Login/>}   />
           <Route path={"forgotPassword"} element={<ForgotPassword/>} />
@@ -371,7 +372,7 @@ const[productId,setProductId]=useState()
         </Route>
       </Routes>
       <ToastContainer
-position="top-center"
+position="bottom-left"
 autoClose={5000}
 hideProgressBar={false}
 newestOnTop
@@ -381,8 +382,8 @@ pauseOnFocusLoss
 draggable={false}
 pauseOnHover
 theme="colored"
-bodyClassName="toast-message-body"
-style={{width:'700px'}}
+bodyClassName="toast-message-body "
+style={{width:'250px',fontSize:'12px' , fontWeight:300}}
 />
 {isLoading && <Loading />}
 {(showModal.name==="ModalUser" && showModal.status===true) && <ModalCompanie setShowModal={setShowModal} showModal={showModal}/>}

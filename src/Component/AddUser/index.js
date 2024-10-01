@@ -210,8 +210,8 @@ useEffect(()=>{
        <div style={{boxShadow:'0 0 1px black' ,marginTop:'150px', padding:'5px'}}> <h5 style={{fontWeight:100}}><TextAnnimation text={id ? 'UPDATE ACCOUNT COMPANIE' : 'ADD ACCOUNT COMPANIE'} /></h5></div>
         <form className='mt-[30px]' onSubmit={formik.handleSubmit}>
          <div className='d-flex flex-column gap-10'>
-         <div className='d-flex gap-10'>
-           <div style={{width:'50%'}}>
+         <div className='flex md:flex-row flex-col gap-10'>
+           <div className='md:w-1/2 w-full' >
            <div className="input-group input-group-default mb-3"><span className="input-group-text" id="inputGroup-sizing-lg"><MdOutlineDriveFileRenameOutline /></span>
                       <input className="form-control" type="text"  onChange={formik.handleChange('firstname')} value={formik.values.firstname} placeholder='firstname ...'  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                       {formik.touched.firstname && formik.errors.firstname && <MessageContainer title={formik.errors.firstname} />}
@@ -250,7 +250,7 @@ useEffect(()=>{
              
             </div>
            
-          <div style={{width:'50%'}}>
+          <div className='md:w-1/2 w-full' >
        {  id=== undefined && id === user?._id && !changePass && <Link className='d-flex justify-content-start mb-2' onClick={()=>setChangePass(true)}>Change Password</Link>}
             {changePass && id ===user?._id &&   <div className="input-container">
                 <label htmllfor="email"> Current Password</label>
@@ -328,7 +328,7 @@ useEffect(()=>{
          </div>
           
            {msg && msg?.length> 0 && <div className={`text-light ${isSuccess ? 'bg-success' : 'bg-danger'} fs-7 p-1`}> {msg}</div>}
-         <button className='yyyaaa mx-auto block styleButton  btn-sm mb-4 text-3xl'   type='submit'>{id ? "Update Account" : "ADD USER"}</button>
+         <button className="btn btn-primary btn-block w-100 mt-2"   type='submit'>{id ? "Update Account" : "ADD USER"}</button>
 
         </form>
     </div>
