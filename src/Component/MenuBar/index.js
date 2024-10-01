@@ -43,7 +43,7 @@ const MenuBar = ({setMenuStates,menuStates}) => {
     <div className='flex items-center gap-2 p-2'>
   
     <ImUsers />
-      <span className='mb-0  text-base font-medium'>User </span>
+      <span className='mb-0  text-base uppercase font-medium'>User </span>
     </div>
    {menuStates.user ?<MdOutlineKeyboardArrowDown onClick={()=>{
        setMenuStates(menuStates.companie===false)
@@ -53,9 +53,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
        setMenuStates(menuStates.companie===false)
       handleIconClick('user')}} />  } 
   </div>
- <div className={`${menuStates.user ? 'block': 'hidden'} px-5`}>
- <div className='flex items-center'><span  className='mb-0  text-lg font-extralight mx-2'  onClick={()=>navigate('/admin/addUser')}><code>Add User</code></span></div>
- <div className='flex items-center'><span  className='mb-0  text-lg font-extralight mx-2'  onClick={()=>navigate('/admin/listusers')}><code>List User</code></span></div>
+ <div className={`${menuStates.user ? 'block': 'hidden'} px-1`}>
+ <div className='flex items-center '><span  className='mb-0 p-2 uppercase text-sm font-extralight '  onClick={()=>navigate('/admin/addUser')}><code>Add User</code></span></div>
+ <div className='flex items-center'><span  className='mb-0 p-2 uppercase text-sm font-extralight '  onClick={()=>navigate('/admin/listusers')}><code>List User</code></span></div>
  </div>
   
          </div>
@@ -73,9 +73,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
       setMenuStates(menuStates.user===false)
       handleIconClick('companie')}} />  } 
   </div>
-  <div className={`${menuStates.companie ? 'block': 'hidden'} px-5`}>
- <div  className='flex  items-center'><span onClick={()=>navigate('/admin/addclient')}  className='mb-0 text-lg font-extralight mx-2'><code> Add Companie</code></span></div>
- <div  className='flex  items-center'><span onClick={()=>navigate('/admin/listcompanie')}  className='mb-0 text-lg font-extralight mx-2'><code> LIST Companie</code></span></div>
+  <div className={`${menuStates.companie ? 'block': 'hidden'} px-1`}>
+ <div  className='flex  items-center p-2'><span onClick={()=>navigate('/admin/addclient')}  className='mb-0 uppercase text-sm font-extralight '><code> Add Companie</code></span></div>
+ <div  className='flex  items-center p-2'><span onClick={()=>navigate('/admin/listcompanie')}  className='mb-0 uppercase text-sm font-extralight '><code> LIST Companie</code></span></div>
   <span><i class="fa-solid fa-square-plus"></i></span>
  </div>
   </div>
@@ -95,9 +95,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
       
       handleIconClick('appareil')}} />  } 
   </div>
-  <div className={`${menuStates.appareil ? ' block': 'hidden'} px-5`}>
- <div  className='flex  items-center'><span  className='mb-0 text-lg font-extralight mx-2' onClick={()=>navigate('/admin/addappareil')}><code> Add appareil</code></span></div>
- <div  className='flex  items-center'><span  className='mb-0 text-lg font-extralight mx-2' onClick={()=>navigate('/admin/listappareil')}><code> List appareils</code></span></div>
+  <div className={`${menuStates.appareil ? ' block': 'hidden'} px-1`}>
+ <div  className='flex  items-center p-2'><span  className='mb-0 uppercase text-sm font-extralight ' onClick={()=>navigate('/admin/addappareil')}><code> Add appareil</code></span></div>
+ <div  className='flex  items-center p-2'><span  className='mb-0 uppercase text-sm font-extralight ' onClick={()=>navigate('/admin/listappareil')}><code> List appareils</code></span></div>
   <span><i class="fa-solid fa-square-plus"></i></span>
  </div>
   </div>
@@ -121,13 +121,13 @@ const MenuBar = ({setMenuStates,menuStates}) => {
       
       handleIconClick('vehicule')}} />  } 
   </div>
-  <div className={`${menuStates.vehicule ? 'block': 'hidden'} px-5`}>
- <div  className='flex  items-center'><span  className='mb-0 text-lg font-extralight mx-2' onClick={()=>navigate('/admin/addvehicule')}><code> Add vehicule</code></span></div>
- <div  className='flex  items-center'><span  className='mb-0 text-lg font-extralight mx-2' onClick={()=>navigate('/admin/listcar')}><code> List vehicules</code></span></div>
+  <div className={`${menuStates.vehicule ? 'block': 'hidden'} px-1`}>
+ <div  className='flex  items-center p-2'><span  className='mb-0 uppercase text-sm font-extralight ' onClick={()=>navigate('/admin/addvehicule')}><code> Add vehicule</code></span></div>
+ <div  className='flex  items-center p-2'><span  className='mb-0 uppercase text-sm font-extralight' onClick={()=>navigate('/admin/listcar')}><code> List vehicules</code></span></div>
   <span><i class="fa-solid fa-square-plus"></i></span>
  </div>
   </div>
-  <div className={`p-2   flex flex-col ${menuStates.user ? "bg-gray-200 text-black" :"transparent"} `}>
+  <div className={`p-2   flex flex-col ${menuStates.article ? "bg-gray-200 text-black" :"transparent"} `}>
          <div className="hoverable-div "  >
     <div  className='flex items-center gap-2 p-2'>
   
@@ -142,9 +142,9 @@ const MenuBar = ({setMenuStates,menuStates}) => {
        setMenuStates(menuStates.companie===false)
       handleIconClick('article')}} />  } 
   </div>
- <div className={`${menuStates.article ? 'block': 'hidden'} px-5`}>
- <div className='flex items-center'><span  className='mb-0  text-lg font-extralight mx-2'  onClick={()=>navigate('/admin/addArticle')}><code>Add Article</code></span></div>
- <div className='flex items-center'><span  className='mb-0  text-lg font-extralight mx-2'  onClick={()=>navigate('/admin/listArticle')}><code>List Article</code></span></div>
+ <div className={`${menuStates.article ? 'block': 'hidden'} px-1`}>
+ <div className='flex items-center p-2'><span  className='mb-0  uppercase text-sm font-extralight '  onClick={()=>navigate('/admin/addArticle')}><code>Add Article</code></span></div>
+ <div className='flex items-center p-2'><span  className='mb-0  uppercase text-sm font-extralight '  onClick={()=>navigate('/admin/listArticle')}><code>List Article</code></span></div>
  </div>
   
          </div>

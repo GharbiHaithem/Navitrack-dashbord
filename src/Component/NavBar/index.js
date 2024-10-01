@@ -199,7 +199,7 @@ const [oppened,setOppened] =useState(false)
                     <use href="../../assets/svg/icon-sprite.svg#notification"></use>
                   </svg><span className="badge rounded-pill  translate-y-2 -translate-x-2 badge-secondary">{notif?.length} </span>
                   {showDropNotif && isScreenSmall && 
-                  <div  ref={menuRef} className={`absolute -translate-x-32 top-[35px] bg-white shadow-xl  x h-[400px] w-[250px] overflow-y-scroll scroll-container`}>
+                  <div  ref={menuRef} className={`absolute -translate-x-32 top-[35px] bg-white shadow-xl   opacity-100 h-[400px] w-[250px] overflow-y-scroll `}>
                   <h6 className="f-18 mb-0 dropdown-title text-start px-5 mt-4">Notitications</h6>
               
                     
@@ -207,7 +207,7 @@ const [oppened,setOppened] =useState(false)
                    {
                     notif?.map((c)=>(
                    <div  className='flex justify-between items-center X'  >
-                     <NotifDevis key={c?._id} className={'p-3  '} onClick={()=>{
+                     <NotifDevis key={c?._id} className={'p-3  hover:bg-[#eee]'} onClick={()=>{
                       navigate(`/admin/devis/${c?._id}`)
                     }}  msg={c}  /> 
                     <span  className='mr-[30px]' onClick={(e)=>{
